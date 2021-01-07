@@ -1,0 +1,24 @@
+{
+    "name": "practica-intro-js",
+    "version": "1.0.0",
+    "description": "Simulación del mundial de futbol de 204 celebrado en Brasil",
+    "main": "index.js",
+    "directories": {
+      "doc": "docs"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "github",
+      "url": "https://github.com/jpg9025/practicaJavaScript"
+    },
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+      "axios": "^0.21.1",
+      "request": "^2.88.2"
+    }
+}
+  
