@@ -4,7 +4,7 @@ const localTeam = 0
 const awayTeam = 1
 //Definimos las configuración para los partidos de fase de grupos
 export class GroupsMatch extends Match {
-    constructor (){
+    constructor (localTeam, awayTeam){
         super(localTeam, awayTeam/*, config*/)
     }
 

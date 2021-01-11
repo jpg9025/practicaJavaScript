@@ -13,14 +13,13 @@ export class Match {
         return Math.floor(Math.round(Math.random() * 10)) //Con un Math.floor se obtienen valores más realistas de cantidad de goles
     }
 
-    play(match){
-        match=[localTeam,awayTeam]
+    play(){
         const localGoals = this.goalsCreator()
         const awayGoals = this.goalsCreator()
         return {
-            localTeam: match[0],
+            localTeam: this.localTeam,
             localGoals: localGoals,
-            awayTeam: match[1],
+            awayTeam: this.awayTeam,
             awayGoals: awayGoals
         }
     }
