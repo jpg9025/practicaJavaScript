@@ -2,130 +2,322 @@ export const teams = [
   {
     "name": "Algeria",
     "code": "ALG",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Côte d'Ivoire",
     "code": "CIV",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Ghana",
     "code": "GHA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Nigeria",
     "code": "NGA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Cameroon",
     "code": "CMR",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Japan",
     "code": "JPN",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "South Korea",
     "code": "KOR",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Honduras",
     "code": "HON",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Costa Rica",
     "code": "CRC",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Belgium",
     "code": "BEL",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Germany",
     "code": "GER",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Spain",
     "code": "ESP",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "France",
     "code": "FRA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Greece",
     "code": "GRE",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Italy",
     "code": "ITA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Netherlands",
     "code": "NED",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Portugal",
     "code": "POR",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Switzerland",
     "code": "SUI",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Croatia",
     "code": "CRO",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Russia",
     "code": "RUS",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Bosnia-Herzegovina",
     "code": "BIH",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "England",
     "code": "ENG",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Iran",
     "code": "IRN",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Mexico",
     "code": "MEX",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "United States",
     "code": "USA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Australia",
     "code": "AUS",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Argentina",
     "code": "ARG",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Brazil",
     "code": "BRA",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Chile",
     "code": "CHI",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Uruguay",
     "code": "URU",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Colombia",
     "code": "COL",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   },
   {
     "name": "Ecuador",
     "code": "ECU",
+    "points": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "matchesWon": 0,
+    "matchesDraw": 0,
+    "matchesLost": 0
   }
 ]
 
