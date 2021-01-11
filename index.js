@@ -8,6 +8,7 @@ for (let i=0;i<teams.length;i++){
 }
 
 //Mwzclamos aleatoriamente los equipos y los volvemos a imprimir
+console.log("\n-----\n")
 teamsShuffler(teams)
 for (let i=0;i<teams.length;i++){
     console.log(teams[i].name," - ",teams[i].code)

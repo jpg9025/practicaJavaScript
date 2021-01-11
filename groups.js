@@ -59,10 +59,9 @@ export const groupGenerator = function (array) {
             console.log("\n", groups[j-1].name,"\n")
             for (let k=1;k<=4;k++) {
                 groups[j-1].clubs[k-1]=array[i].name
-                console.log(array[i])
+                console.log(array[i].name," - ",array[i].code)
                 i+=1
             }
-            console.log(`--------------`)
         }
     }
     return groups
