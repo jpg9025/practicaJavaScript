@@ -1,3 +1,5 @@
+//import { teams } from "./teams"
+
 const localTeam = 0
 const awayTeam = 1
 
@@ -9,7 +11,7 @@ export class Match {
         this.summaries=[]
     }
 
-    goalsCreator() {
+    goalsCreator(){
         return Math.floor(Math.round(Math.random() * 10)) //Con un Math.floor se obtienen valores más realistas de cantidad de goles
     }
 
@@ -22,6 +24,27 @@ export class Match {
             awayTeam: this.awayTeam,
             awayGoals: awayGoals
         }
+    }
+
+    updateTeams(){
+        console.log(this.localTeam)
+        console.log(this.awayTeam)
+    }
+
+    /*getTeamForName(array) {
+        const localTeam = this.localTeam
+        const awayTeam = this.awayTeam
+        const filteredTeams = array.filter(function() {
+            return array.name == localTeam || array.name == awayTeam
+        })
+        console.log (filteredTeams)
+    }*/
+
+    getTeamForName(array) {
+        const localTeam = this.localTeam
+        const awayTeam = this.awayTeam
+        const filteredTeams = array.filter(array => array.name == localTeam || array.name == awayTeam)
+        return filteredTeams
     }
 
     /*pointsCleaner(team){

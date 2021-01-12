@@ -14,8 +14,6 @@ for (let i=0;i<teams.length;i++){
     console.log(teams[i].name," - ",teams[i].code)
 }
 
-console.log(teams)
-
 // Me devuelve un array de arrays de arrays con la planificación (partidos - jornada por grupo - planificación)
 const journeyPlanification = initSchedule(groupGenerator(teams)) 
 
@@ -26,6 +24,10 @@ for (let i = 0;i<journeyPlanification.length; i++){
         console.log("Jugando partido",journeyPlanification[i][j])
         currentMatch.play()
         console.log(currentMatch.play())
+        //currentMatch.updateTeams()
+        console.log(currentMatch.getTeamForName(teams))
+        //console.log(currentMatch.updateTeams(teams))
     }
-    //console.log("Jugando jornada",journeyPlanification[i])
 }
+
+
