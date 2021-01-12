@@ -4,10 +4,9 @@ const localTeam = 0
 const awayTeam = 1
 
 export class Match {
-    constructor (localTeam, awayTeam/*, config={}*/){
+    constructor (localTeam, awayTeam){
         this.localTeam = localTeam
         this.awayTeam = awayTeam
-        //this.setup(config)
         this.summaries=[]
     }
 
@@ -26,25 +25,26 @@ export class Match {
         }
     }
 
-    updateTeams(){
-        console.log(this.localTeam)
-        console.log(this.awayTeam)
-    }
-
-    /*getTeamForName(array) {
-        const localTeam = this.localTeam
-        const awayTeam = this.awayTeam
-        const filteredTeams = array.filter(function() {
-            return array.name == localTeam || array.name == awayTeam
-        })
-        console.log (filteredTeams)
-    }*/
-
     getTeamForName(array) {
         const localTeam = this.localTeam
         const awayTeam = this.awayTeam
         const filteredTeams = array.filter(array => array.name == localTeam || array.name == awayTeam)
         return filteredTeams
+    }
+
+    updateTeamsGroups(results) {
+        results.localGoals = this.localTeam.goalsFor
+        results.localGoals = this.awayTeam.goalsAgainst 
+        results.awayGoals  = this.awayTeam.goalsFor 
+        results.awayGoals = this.localTeam.goalsAgainst 
+        if (results.localGoals > results.awayGoals) { // Gana equipo local
+            this.localTeam.points += 3
+        } else if (results.awayGoals > results.localGoals) { // Gana equipo visitante
+            this.awayTeam.points += 3
+        } else if (results.awayGoals == results.localGoals) { // Empatan
+            this.localTeam.points += 1 
+            this.awayTeam.points += 1 
+        }
     }
 
     /*pointsCleaner(team){
@@ -53,5 +53,3 @@ export class Match {
         }
     }*/
 }
-
-

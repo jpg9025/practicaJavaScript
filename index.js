@@ -22,11 +22,11 @@ for (let i = 0;i<journeyPlanification.length; i++){
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
-        currentMatch.play()
-        console.log(currentMatch.play())
-        //currentMatch.updateTeams()
-        console.log(currentMatch.getTeamForName(teams))
-        //console.log(currentMatch.updateTeams(teams))
+        const results = currentMatch.play()
+        console.log(results) //Jugamos la liga
+        const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
+        console.log(teamsFiltered)
+        //teamsFiltered.updateTeamsGroups(results)
     }
 }
 

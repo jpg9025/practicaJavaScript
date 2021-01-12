@@ -1,3 +1,16 @@
+/*export default class Teams {
+  constructor (name, code, points, goalsFor, goalsAgainst, matchesWon, matchesDraw, matchesLost){
+    this.name = name
+    this.code = code
+    this.point = points = 0
+    this.goalsFor = goalsFor = 0
+    this.goalsAgainst = goalsAgainst = 0
+    this.matchesWon = matchesWon = 0
+    this.matchesDraw = matchesDraw = 0
+    this.matchesLost = matchesLost = 0
+  }
+}*/
+
 export const teams = [
   {
     "name": "Algeria",

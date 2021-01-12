@@ -2,14 +2,6 @@ import { Match } from './match.js'
 
 export default class PalyOffMatch extends Match {
     constructor (localTeam, awayTeam){
-        super(localTeam, awayTeam/*, config*/)
+        super(localTeam, awayTeam)
     }
-
-    /*setup(config) {
-        const defaultConfig = {
-            pointsPerWin: 1,
-            pointsPerLose: 0
-        }
-        this.config = Object.assign(defaultConfig, config)
-    }*/
 }

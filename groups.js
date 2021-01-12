@@ -5,17 +5,8 @@ const awayTeam = 1
 //Definimos las configuración para los partidos de fase de grupos
 export class GroupsMatch extends Match {
     constructor (localTeam, awayTeam){
-        super(localTeam, awayTeam/*, config*/)
+        super(localTeam, awayTeam)
     }
-
-    /*setup(config) {
-        const defaultConfig = {
-            pointsPerWin: 3,
-            pointsPerDraw: 1,
-            pointsPerLose: 0
-        }
-        this.config = Object.assign(defaultConfig, config)
-    }*/
 }
 
 //Mezclado aleatorio de los equipos
