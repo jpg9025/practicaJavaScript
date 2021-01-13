@@ -17,17 +17,17 @@ export const teamsShuffler = function (array) {
         array[j] = temp
     }
 }
-//Array.prototype.shuffle = function(){
-    //var i = this.length
-    //while (i){
-        //var j = Matth.floor(Math.random()*i)
-        //var t = this[--i]
-        //this[i]=this[j]
-        //this[j]=t
-    //}
-    //return this
-//}
-//Al prototipo de los arrays le añadimos el método shuffle y así todos los arrays tienen el método shuffle (es común hacer esto)
+//Otra forma de mezclar - Al prototipo de los arrays le añadimos el método shuffle y así todos los arrays tienen el método shuffle (es común hacer esto)
+/*Array.prototype.shuffle = function(){
+    var i = this.length
+    while (i){
+        var j = Matth.floor(Math.random()*i)
+        var t = this[--i]
+        this[i]=this[j]
+        this[j]=t
+    }
+    return this
+}*/
 
 //Creación de los ocho grupos
 export const groupGenerator = function (array) {
@@ -105,11 +105,14 @@ export const initSchedule = function(groups) {
     return journeySchedule
 }
 
+//La función updateTeamsGroups debe ser independiente de la clase de objetos Match y GroupsMatch porque compara arrays de equipos
 export const updateTeamsGroups = function(results,teamsFiltered) {
     teamsFiltered[0].goalsFor += results.localGoals 
     teamsFiltered[1].goalsAgainst += results.localGoals 
     teamsFiltered[1].goalsFor += results.awayGoals  
     teamsFiltered[0].goalsAgainst += results.awayGoals 
+    teamsFiltered[0].goalsDiff = teamsFiltered[0].goalsFor - teamsFiltered[0].goalsAgainst
+    teamsFiltered[1].goalsDiff = teamsFiltered[1].goalsFor - teamsFiltered[1].goalsAgainst
     if (results.localGoals > results.awayGoals) { // Gana equipo local
       teamsFiltered[0].points += 3
       teamsFiltered[0].matchesWon += 1
@@ -126,47 +129,3 @@ export const updateTeamsGroups = function(results,teamsFiltered) {
     }
     return teamsFiltered
 }
-
-/*
-    initSchedule(round) {
-        const numberOfMatchDays = this.teams.length - 1
-        const numberOfMatchesPerMatchDay = this.teams.length / 2
-        for (let i = 0; i < numberOfMatchDays; i++) {
-            const matchDay = []  // jornada vacía
-            for (let j = 0; j < numberOfMatchesPerMatchDay; j++) {
-                const match = ['Equipo local', 'Equipo visitante']  // partido
-                matchDay.push(match)
-            }
-            // una vez añadidos todos los partidos a la jornada
-            round.push(matchDay)  // añadimos la jornada a la planificación
-        }
-    }
-
-    /*constructor(name, teams=[], config={}) {
-        super(name, teams, config)
-    }
-
-    setup(config) {
-        const defaultConfig = {
-            rounds: 1,
-            pointsPerWin: 3,
-            pointsPerDraw: 1,
-            pointsPerLose: 0
-        }
-        this.config = Object.assign(defaultConfig, config)
-    }
-    goalsCreator() {
-        return Math.floor(Math.round(Math.random() * 10))
-    }
-
-    play(match) {
-        const homeGoals = this.goalsCreator()
-        const awayGoals = this.goalsCreator()
-        return {
-            homeTeam: match[localTeam],
-            homeGoals,
-            awayTeam: match[awayTeam],
-            awayGoals
-        }
-    }
-}*/

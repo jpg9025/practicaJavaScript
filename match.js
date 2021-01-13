@@ -1,4 +1,3 @@
-
 export class Match {
     constructor (localTeam, awayTeam){
         this.localTeam = localTeam
@@ -28,24 +27,4 @@ export class Match {
         return filteredTeams
     }
 
-    /*updateTeamsGroups(results) {
-        results.localGoals = this.localTeam.goalsFor
-        results.localGoals = this.awayTeam.goalsAgainst 
-        results.awayGoals  = this.awayTeam.goalsFor 
-        results.awayGoals = this.localTeam.goalsAgainst 
-        if (results.localGoals > results.awayGoals) { // Gana equipo local
-            this.localTeam.points += 3
-        } else if (results.awayGoals > results.localGoals) { // Gana equipo visitante
-            this.awayTeam.points += 3
-        } else if (results.awayGoals == results.localGoals) { // Empatan
-            this.localTeam.points += 1 
-            this.awayTeam.points += 1 
-        }
-    }*/
-
-    /*pointsCleaner(team){
-        customizeTeam(team){
-            this.club.points=0
-        }
-    }*/
 }

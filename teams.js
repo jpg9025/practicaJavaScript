@@ -27,6 +27,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -37,6 +38,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -47,6 +49,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -57,6 +60,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -67,6 +71,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -77,6 +82,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -87,6 +93,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -97,6 +104,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -107,6 +115,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -117,6 +126,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -127,6 +137,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -137,6 +148,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -147,6 +159,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -157,6 +170,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -167,6 +181,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -177,6 +192,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -187,6 +203,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -197,6 +214,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -207,6 +225,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -217,6 +236,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -227,6 +247,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -237,6 +258,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -247,6 +269,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -257,6 +280,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -267,6 +291,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -277,6 +302,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -287,6 +313,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -297,6 +324,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -307,6 +335,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -317,6 +346,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -327,6 +357,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
@@ -337,6 +368,7 @@ export const teams = [
     "points": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
+    "goalsDiff": 0,
     "matchesWon": 0,
     "matchesDraw": 0,
     "matchesLost": 0
