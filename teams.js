@@ -1,5 +1,4 @@
-export const updateTeamsGroups = function(results,teamsFiltered) {
-
+/*export const updateTeamsArray = function(teamsFiltered,teams) {
   teamsFiltered[0].goalsFor += results.localGoals 
   teamsFiltered[1].goalsAgainst += results.localGoals 
   teamsFiltered[1].goalsFor += results.awayGoals  
@@ -19,7 +18,7 @@ export const updateTeamsGroups = function(results,teamsFiltered) {
     teamsFiltered[0].matchesDraw += 1
   }
   return teamsFiltered
-}
+}*/
 
 export const teams = [
   {

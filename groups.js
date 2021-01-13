@@ -1,7 +1,5 @@
 import { Match } from './match.js'
 
-const localTeam = 0
-const awayTeam = 1
 //Definimos las configuración para los partidos de fase de grupos
 export class GroupsMatch extends Match {
     constructor (localTeam, awayTeam){
@@ -105,6 +103,28 @@ export const initSchedule = function(groups) {
     }
     //console.log(journeySchedule)
     return journeySchedule
+}
+
+export const updateTeamsGroups = function(results,teamsFiltered) {
+    teamsFiltered[0].goalsFor += results.localGoals 
+    teamsFiltered[1].goalsAgainst += results.localGoals 
+    teamsFiltered[1].goalsFor += results.awayGoals  
+    teamsFiltered[0].goalsAgainst += results.awayGoals 
+    if (results.localGoals > results.awayGoals) { // Gana equipo local
+      teamsFiltered[0].points += 3
+      teamsFiltered[0].matchesWon += 1
+      teamsFiltered[1].matchesLost += 1
+    } else if (results.awayGoals > results.localGoals) { // Gana equipo visitante
+      teamsFiltered[1].points += 3
+      teamsFiltered[1].matchesWon += 1
+      teamsFiltered[0].matchesLost += 1
+    } else if (results.awayGoals == results.localGoals) { // Empatan
+      teamsFiltered[0].points += 1 
+      teamsFiltered[1].points += 1
+      teamsFiltered[1].matchesDraw += 1
+      teamsFiltered[0].matchesDraw += 1
+    }
+    return teamsFiltered
 }
 
 /*
