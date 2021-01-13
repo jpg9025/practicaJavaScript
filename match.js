@@ -2,7 +2,6 @@ export class Match {
     constructor (localTeam, awayTeam){
         this.localTeam = localTeam
         this.awayTeam = awayTeam
-        this.summaries=[]
     }
 
     goalsCreator(){

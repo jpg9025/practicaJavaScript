@@ -1,23 +1,43 @@
-/*export const updateTeamsArray = function(teamsFiltered,teams) {
-  teamsFiltered[0].goalsFor += results.localGoals 
-  teamsFiltered[1].goalsAgainst += results.localGoals 
-  teamsFiltered[1].goalsFor += results.awayGoals  
-  teamsFiltered[0].goalsAgainst += results.awayGoals 
-  if (results.localGoals > results.awayGoals) { // Gana equipo local
-    teamsFiltered[0].points += 3
-    teamsFiltered[0].matchesWon += 1
-    teamsFiltered[1].matchesLost += 1
-  } else if (results.awayGoals > results.localGoals) { // Gana equipo visitante
-    teamsFiltered[1].points += 3
-    teamsFiltered[1].matchesWon += 1
-    teamsFiltered[0].matchesLost += 1
-  } else if (results.awayGoals == results.localGoals) { // Empatan
-    teamsFiltered[0].points += 1 
-    teamsFiltered[1].points += 1
-    teamsFiltered[1].matchesDraw += 1
-    teamsFiltered[0].matchesDraw += 1
+export const updateTeamsArray1 = function(teams=[],teamsFiltered=[]) {
+  if (teams.name == teamsFiltered.name){
+    teams.name = teamsFiltered[1].name
+    teams.points = teamsFiltered[1].points 
+    teams.goalsFor = teamsFiltered[1].goalsFor 
+    teams.goalsAgainst = teamsFiltered[1].goalsAgainst 
+    teams.goalsDiff = teamsFiltered[1].goalsDiff
+    teams.matchesWon = teamsFiltered[1].matchesWon
+    teams.matchesDraw = teamsFiltered[1].matchesDraw
+    teams.matchesLost = teamsFiltered[1].matchesLost
   }
-  return teamsFiltered
+  return teams
+}
+
+export const updateTeamsArray0 = function(teams=[],teamsFiltered=[]) {
+  if (teams.name == teamsFiltered.name){
+    teams.name = teamsFiltered[0].name
+    teams.points = teamsFiltered[0].points 
+    teams.goalsFor = teamsFiltered[0].goalsFor 
+    teams.goalsAgainst = teamsFiltered[0].goalsAgainst 
+    teams.goalsDiff = teamsFiltered[0].goalsDiff
+    teams.matchesWon = teamsFiltered[0].matchesWon
+    teams.matchesDraw = teamsFiltered[0].matchesDraw
+    teams.matchesLost = teamsFiltered[0].matchesLost
+  }
+  return teams
+}
+
+/*export const plusTeamsArrays = function(array1=[],array2=[]){
+   const array3 = []
+   if (array1.name == array2.name){
+     array1.points += array2.points
+     array1.goalsFor += array2.goalsFor
+     array1.goalsAgains += array2.goalsFor
+     array1.goalsDiff += array2.goalsDiff
+     array1.matchesWon += array2.matchesWon
+     array1.matchesDraw += array2.matchesDraw
+     array1.matchesLost += array2.matchesLost
+   } else array3 = [array1, array2]
+   return array3
 }*/
 
 export const teams = [

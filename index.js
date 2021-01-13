@@ -1,4 +1,4 @@
-import { teams } from './teams.js'
+import { updateTeamsArray0, updateTeamsArray1, teams } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
 
@@ -9,7 +9,7 @@ for (let i=0;i<teams.length;i++){
 
 //Mwzclamos aleatoriamente los equipos y los volvemos a imprimir
 console.log("\n-----\n")
-teamsShuffler(teams)
+const teamsShufflered = teamsShuffler(teams)
 for (let i=0;i<teams.length;i++){
     console.log(teams[i].name," - ",teams[i].code)
 }
@@ -41,7 +41,11 @@ for (let i = 0;i<(journeyPlanification.length)/3; i++){
         console.log(results) //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
-        console.log(groupsResults)
+        //console.log(groupsResults)
+        const summariesFirstJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
+        const summariesFirstJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
+        const summariesFirstJourneyTotal = [summariesFirstJourney0,summariesFirstJourney1]
+        console.log(summariesFirstJourneyTotal)
     }
 }
 
