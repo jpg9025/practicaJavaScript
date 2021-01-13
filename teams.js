@@ -1,3 +1,4 @@
+//Métodos para crear el resumen, no logro hacerlo en un o
 export const updateTeamsArray1 = function(teams=[],teamsFiltered=[]) {
   if (teams.name == teamsFiltered.name){
     teams.name = teamsFiltered[1].name
@@ -25,20 +26,6 @@ export const updateTeamsArray0 = function(teams=[],teamsFiltered=[]) {
   }
   return teams
 }
-
-/*export const plusTeamsArrays = function(array1=[],array2=[]){
-   const array3 = []
-   if (array1.name == array2.name){
-     array1.points += array2.points
-     array1.goalsFor += array2.goalsFor
-     array1.goalsAgains += array2.goalsFor
-     array1.goalsDiff += array2.goalsDiff
-     array1.matchesWon += array2.matchesWon
-     array1.matchesDraw += array2.matchesDraw
-     array1.matchesLost += array2.matchesLost
-   } else array3 = [array1, array2]
-   return array3
-}*/
 
 export const teams = [
   {

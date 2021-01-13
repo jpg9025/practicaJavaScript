@@ -34,6 +34,7 @@ const journeyPlanification = initSchedule(groupGenerator(teams))
 //Jornada 1
 console.log("Jugando Jornada 1 de la fase de grupos")
 for (let i = 0;i<(journeyPlanification.length)/3; i++){
+    const summariesFirstJourneyTotal = []
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
@@ -44,9 +45,12 @@ for (let i = 0;i<(journeyPlanification.length)/3; i++){
         //console.log(groupsResults)
         const summariesFirstJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesFirstJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
-        const summariesFirstJourneyTotal = [summariesFirstJourney0,summariesFirstJourney1]
-        console.log(summariesFirstJourneyTotal)
+        const summariesFirstJourneyGroups = [summariesFirstJourney0,summariesFirstJourney1]
+        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[0])
+        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[1])
+        //console.table(summariesFirstJourneyGroups)
     }
+    console.table(summariesFirstJourneyTotal)
 }
 
 //Jornada 2
