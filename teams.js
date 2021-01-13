@@ -27,6 +27,48 @@ export const updateTeamsArray0 = function(teams=[],teamsFiltered=[]) {
   return teams
 }
 
+export const orderSummaries = function(array){
+  array.sort(function(team1,team2) {
+    for(const i=1;i<Array.length;i++){
+      team1=array[i-1]
+      team2=array[i]
+      if (array[i-1].points > array[i].points) {
+        return -1
+      } else if (array[i-1].points < array[i].points) {
+        return 1
+      } else {
+        if (array[i-1].goalsDiff > array[i].goalsDiff) {
+          return -1
+        } else if (array[i-1].goalsDiff < array[i].goalsDiff) {
+          return 1
+        } else {
+          // Orden alfabético
+        }
+      }
+    }
+  })
+}
+
+/*Array.prototype.sort(function(team1,team2) {
+  for(const i=1;i<Array.length;i++){
+    team1=array[i-1]
+    team2=array[i]
+    if (array[i-1].points > array[i].points) {
+      return -1
+    } else if (array[i-1].points < array[i].points) {
+      return 1
+    } else {
+      if (array[i-1].goalsDiff > array[i].goalsDiff) {
+        return -1
+      } else if (array[i-1].goalsDiff < array[i].goalsDiff) {
+        return 1
+      } else {
+        // Orden alfabético
+      }
+    }
+  }
+})*/
+
 export const teams = [
   {
     "name": "Algeria",

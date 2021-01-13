@@ -17,7 +17,6 @@ for (let i=0;i<teams.length;i++){
 // Me devuelve un array de arrays de arrays con la planificación (partidos - jornada por grupo - planificación)
 const journeyPlanification = initSchedule(groupGenerator(teams)) 
 
-
 //Divido este buche en tres al tener que dar los resultados jornada a jornada
 /*for (let i = 0;i<journeyPlanification.length; i++){
     for (let j=0;j<journeyPlanification[i].length;j++){
@@ -42,20 +41,19 @@ for (let i = 0;i<(journeyPlanification.length)/3; i++){
         console.log(results) //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
-        //console.log(groupsResults)
         const summariesFirstJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesFirstJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
         const summariesFirstJourneyGroups = [summariesFirstJourney0,summariesFirstJourney1]
-        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[0])
-        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[1])
-        //console.table(summariesFirstJourneyGroups)
+        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[0],summariesFirstJourneyGroups[1])
     }
+    //summariesFirstJourneyTotal.sort()
     console.table(summariesFirstJourneyTotal)
 }
 
 //Jornada 2
 console.log("Jugando Jornada 2 de la fase de grupos")
 for (let i = ((journeyPlanification.length)/3);i<(2*(journeyPlanification.length)/3); i++){
+    const summariesSecondJourneyTotal = []
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
@@ -63,13 +61,18 @@ for (let i = ((journeyPlanification.length)/3);i<(2*(journeyPlanification.length
         console.log(results) //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
-        console.log(groupsResults)
+        const summariesSecondJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
+        const summariesSecondJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
+        const summariesSecondJourneyGroups = [summariesSecondJourney0,summariesSecondJourney1]
+        summariesSecondJourneyTotal.push(summariesSecondJourneyGroups[0],summariesSecondJourneyGroups[1])
     }
+    console.table(summariesSecondJourneyTotal)
 }
 
 //Jornada 3
 console.log("Jugando Jornada 3 de la fase de grupos")
 for (let i = (2*(journeyPlanification.length)/3);i<journeyPlanification.length; i++){
+    const summariesThirdJourneyTotal = []
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
@@ -77,6 +80,10 @@ for (let i = (2*(journeyPlanification.length)/3);i<journeyPlanification.length; 
         console.log(results) //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
-        console.log(groupsResults)
+        const summariesThirdJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
+        const summariesThirdJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
+        const summariesThirdJourneyGroups = [summariesThirdJourney0,summariesThirdJourney1]
+        summariesThirdJourneyTotal.push(summariesThirdJourneyGroups[0],summariesThirdJourneyGroups[1])
     }
+    console.table(summariesThirdJourneyTotal)
 }
