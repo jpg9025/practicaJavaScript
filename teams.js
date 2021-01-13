@@ -1,15 +1,25 @@
-/*export default class Teams {
-  constructor (name, code, points, goalsFor, goalsAgainst, matchesWon, matchesDraw, matchesLost){
-    this.name = name
-    this.code = code
-    this.point = points = 0
-    this.goalsFor = goalsFor = 0
-    this.goalsAgainst = goalsAgainst = 0
-    this.matchesWon = matchesWon = 0
-    this.matchesDraw = matchesDraw = 0
-    this.matchesLost = matchesLost = 0
+export const updateTeamsGroups = function(results,teamsFiltered) {
+
+  teamsFiltered[0].goalsFor += results.localGoals 
+  teamsFiltered[1].goalsAgainst += results.localGoals 
+  teamsFiltered[1].goalsFor += results.awayGoals  
+  teamsFiltered[0].goalsAgainst += results.awayGoals 
+  if (results.localGoals > results.awayGoals) { // Gana equipo local
+    teamsFiltered[0].points += 3
+    teamsFiltered[0].matchesWon += 1
+    teamsFiltered[1].matchesLost += 1
+  } else if (results.awayGoals > results.localGoals) { // Gana equipo visitante
+    teamsFiltered[1].points += 3
+    teamsFiltered[1].matchesWon += 1
+    teamsFiltered[0].matchesLost += 1
+  } else if (results.awayGoals == results.localGoals) { // Empatan
+    teamsFiltered[0].points += 1 
+    teamsFiltered[1].points += 1
+    teamsFiltered[1].matchesDraw += 1
+    teamsFiltered[0].matchesDraw += 1
   }
-}*/
+  return teamsFiltered
+}
 
 export const teams = [
   {

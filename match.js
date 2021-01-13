@@ -1,7 +1,3 @@
-//import { teams } from "./teams"
-
-const localTeam = 0
-const awayTeam = 1
 
 export class Match {
     constructor (localTeam, awayTeam){
@@ -32,7 +28,7 @@ export class Match {
         return filteredTeams
     }
 
-    updateTeamsGroups(results) {
+    /*updateTeamsGroups(results) {
         results.localGoals = this.localTeam.goalsFor
         results.localGoals = this.awayTeam.goalsAgainst 
         results.awayGoals  = this.awayTeam.goalsFor 
@@ -45,7 +41,7 @@ export class Match {
             this.localTeam.points += 1 
             this.awayTeam.points += 1 
         }
-    }
+    }*/
 
     /*pointsCleaner(team){
         customizeTeam(team){

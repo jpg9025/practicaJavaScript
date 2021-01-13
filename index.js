@@ -1,4 +1,4 @@
-import { teams } from './teams.js'
+import { teams, updateTeamsGroups } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator } from './groups.js'
 import { Match } from './match.js'
 
@@ -25,8 +25,8 @@ for (let i = 0;i<journeyPlanification.length; i++){
         const results = currentMatch.play()
         console.log(results) //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
-        console.log(teamsFiltered)
-        //teamsFiltered.updateTeamsGroups(results)
+        //console.log(teamsFiltered)
+        console.log(updateTeamsGroups(results,teamsFiltered))
     }
 }
 
