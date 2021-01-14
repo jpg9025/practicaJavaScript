@@ -1,9 +1,10 @@
 import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
-import { clearSummaries } from './playoff.js'
+import { clearSummaries, PlayOffMatch } from './playoff.js'
 
 //Imprimimos todos los equipos sin mezclar
+console.log("\n EQUIPOS PARTICIPANTES \n")
 for (let i=0;i<teams.length;i++){
     console.log(teams[i].name," - ",teams[i].code)
 }
@@ -78,5 +79,51 @@ console.table(teamsWhichPassToPlayOff)
 
 //Comienza el playoff
 console.log("\n COMIENZO DE LA FASE ELIMINATORIA - PLAYOFF \n")
-const teamsPlayOff = teamsWhichPassToPlayOff
-console.table(clearSummaries(teamsPlayOff))
+const teamsPlayOff = clearSummaries(teamsWhichPassToPlayOff)
+
+//Octavos de final
+console.log("\n  JUGANDO LOS OCTAVOS DE FINAL \n")
+//Planificación de los octavos de final
+const match1RoundOf16 = new PlayOffMatch (teamsPlayOff[0],teamsPlayOff[3])
+const match2RoundOf16 = new PlayOffMatch (teamsPlayOff[1],teamsPlayOff[2])
+const match3RoundOf16 = new PlayOffMatch (teamsPlayOff[4],teamsPlayOff[7])
+const match4RoundOf16 = new PlayOffMatch (teamsPlayOff[5],teamsPlayOff[6])
+const match5RoundOf16 = new PlayOffMatch (teamsPlayOff[8],teamsPlayOff[11])
+const match6RoundOf16 = new PlayOffMatch (teamsPlayOff[9],teamsPlayOff[10])
+const match7RoundOf16 = new PlayOffMatch (teamsPlayOff[12],teamsPlayOff[15])
+const match8RoundOf16 = new PlayOffMatch (teamsPlayOff[13],teamsPlayOff[14])
+
+//Se juegan los octavos de final
+console.log("Jugando partido [ '",teamsPlayOff[0].name,"' , '",teamsPlayOff[3].name,"' ]")
+const results1 = match1RoundOf16.play()
+console.log(results1)
+match1RoundOf16.updatePlayOffTeams(results1)
+console.log("Jugando partido [ '",teamsPlayOff[1].name,"' , '",teamsPlayOff[2].name,"' ]")
+const results2 = match2RoundOf16.play()
+console.log(results2)
+match2RoundOf16.updatePlayOffTeams(results2)
+console.log("Jugando partido [ '",teamsPlayOff[4].name,"' , '",teamsPlayOff[7].name,"' ]")
+const results3 = match3RoundOf16.play()
+console.log(results3)
+match3RoundOf16.updatePlayOffTeams(results3)
+console.log("Jugando partido [ '",teamsPlayOff[5].name,"' , '",teamsPlayOff[6].name,"' ]")
+const results4 = match4RoundOf16.play()
+console.log(results4)
+match4RoundOf16.updatePlayOffTeams(results4)
+console.log("Jugando partido [ '",teamsPlayOff[8].name,"' , '",teamsPlayOff[11].name,"' ]")
+const results5 = match5RoundOf16.play()
+console.log(results5)
+match5RoundOf16.updatePlayOffTeams(results5)
+console.log("Jugando partido [ '",teamsPlayOff[9].name,"' , '",teamsPlayOff[10].name,"' ]")
+const results6 = match6RoundOf16.play()
+console.log(results6)
+match6RoundOf16.updatePlayOffTeams(results6)
+console.log("Jugando partido [ '",teamsPlayOff[12].name,"' , '",teamsPlayOff[15].name,"' ]")
+const results7 = match7RoundOf16.play()
+console.log(results7)
+match7RoundOf16.updatePlayOffTeams(results7)
+console.log("Jugando partido [ '",teamsPlayOff[13].name,"' , '",teamsPlayOff[14].name,"' ]")
+const results8 = match8RoundOf16.play()
+console.log(results8)
+match8RoundOf16.updatePlayOffTeams(results8)
+//Resultados de los octavos de final
