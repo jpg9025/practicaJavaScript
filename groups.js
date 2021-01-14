@@ -31,6 +31,7 @@ export const teamsShuffler = function (array) {
 
 //Creación de los ocho grupos
 export const groupGenerator = function (array) {
+    console.log("\n\n RESULTADO DEL SORTEO DE GRUPOS")
     let groups = [
         {"name":"Grupo A","clubs":[]},
         {"name":"Grupo B","clubs":[]},
@@ -53,6 +54,7 @@ export const groupGenerator = function (array) {
             }
         }
     }
+    console.log("\n")
     return groups
 }
 
@@ -62,6 +64,7 @@ export const initSchedule = function(groups) {
     const numberOfMatchesPerDay = groups[0].clubs.length / 2
     const journeySchedule = []
 
+    console.log("\n PLANIFICACIÓN DE LAS JORNADAS DE LA FASE DE GRUPOS \n")
     //Jornada 1
     for (let h=1;h<=8;h++){
         const journey1 = []

@@ -1,22 +1,19 @@
 import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
+import { clearSummaries } from './playoff.js'
 
 //Imprimimos todos los equipos sin mezclar
 for (let i=0;i<teams.length;i++){
     console.log(teams[i].name," - ",teams[i].code)
 }
 
-//Mezclamos aleatoriamente los equipos y los volvemos a imprimir
-console.log("\n-----\n")
+//Mezclamos aleatoriamente los equipos
 const teamsShufflered = teamsShuffler(teams)
-for (let i=0;i<teams.length;i++){
-    console.log(teams[i].name," - ",teams[i].code)
-}
 
 // Me devuelve un array de arrays de arrays con la planificación (partidos - jornada por grupo - planificación)
 const journeyPlanification = initSchedule(groupGenerator(teams))
-const teamsWichPassToPlayOff = []
+const teamsWhichPassToPlayOff = [] // Array en el que incluiré los equipos que pasen de la fase de grupos
 
 //Jornada 1
 console.log("\n JUGANDO PRIMERA JORNADA DE LA FASE DE GRUPOS \n")
@@ -70,10 +67,16 @@ for (let i = (2*(journeyPlanification.length)/3);i<journeyPlanification.length; 
         summariesThirdJourneyTotal.push(summariesThirdJourney0,summariesThirdJourney1)
     }
     const summariesThirdJourneyTotalSorted = summariesThirdJourneyTotal.sort(orderSummaries)
-    teamsWichPassToPlayOff.push(summariesThirdJourneyTotalSorted[0],summariesThirdJourneyTotalSorted[1])
+    teamsWhichPassToPlayOff.push(summariesThirdJourneyTotalSorted[0],summariesThirdJourneyTotalSorted[1])
     console.table(summariesThirdJourneyTotal.sort(orderSummaries)) ////Ordenamos la clasificación de la tercera y última jornada
 }
 console.log("\n FIN DE LA FASE DE GRUPOS \n")
 
 //Resultados de la fase de grupos
-console.table(teamsWichPassToPlayOff.sort(orderSummaries))
+console.log("\n Equipos clasificados de la fase de grupos")
+console.table(teamsWhichPassToPlayOff)
+
+//Comienza el playoff
+console.log("\n COMIENZO DE LA FASE ELIMINATORIA - PLAYOFF \n")
+const teamsPlayOff = teamsWhichPassToPlayOff
+console.table(clearSummaries(teamsPlayOff))
