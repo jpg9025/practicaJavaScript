@@ -27,42 +27,28 @@ export const updateTeamsArray0 = function(teams=[],teamsFiltered=[]) {
   return teams
 }
 
+//Función de ordenación de los resultados de la fase de grupos
 export const orderSummaries = function(team1 , team2){
-  if (team1.points > team2.points) {
+  if (team1.points > team2.points) { // 1. Por puntos
     return -1
   } else if (team1.points < team2.points) {
     return 1
   } else {
-    if (team1.goalsDiff > team2.goalsDiff) {
+    if (team1.goalsDiff > team2.goalsDiff) { // 2. Por golaverage
       return -1
     } else if (team1.goalsDiff < team2.goalsDiff) {
       return 1
-    } else {
-      // Orden alfabético
-    }
-  }
-}
-
-
-/*Array.prototype.sort(function(team1,team2) {
-  for(const i=1;i<Array.length;i++){
-    team1=array[i-1]
-    team2=array[i]
-    if (array[i-1].points > array[i].points) {
-      return -1
-    } else if (array[i-1].points < array[i].points) {
-      return 1
-    } else {
-      if (array[i-1].goalsDiff > array[i].goalsDiff) {
+    } else { // 3. Por orden alfabético
+      const name1 = team1.name.toLowerCase()
+      const name2 = team2.name.toLowerCase()
+      if (name1 > name2) {
         return -1
-      } else if (array[i-1].goalsDiff < array[i].goalsDiff) {
+      } else if (name1 < name2) {
         return 1
-      } else {
-        // Orden alfabético
       }
     }
   }
-})*/
+}
 
 export const teams = [
   {
