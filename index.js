@@ -1,4 +1,4 @@
-import { updateTeamsArray0, updateTeamsArray1, teams } from './teams.js'
+import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
 
@@ -43,11 +43,9 @@ for (let i = 0;i<(journeyPlanification.length)/3; i++){
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesFirstJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesFirstJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
-        const summariesFirstJourneyGroups = [summariesFirstJourney0,summariesFirstJourney1]
-        summariesFirstJourneyTotal.push(summariesFirstJourneyGroups[0],summariesFirstJourneyGroups[1])
+        summariesFirstJourneyTotal.push(summariesFirstJourney0,summariesFirstJourney1)
     }
-    //summariesFirstJourneyTotal.sort()
-    console.table(summariesFirstJourneyTotal)
+    console.table(summariesFirstJourneyTotal.sort(orderSummaries)) //Ordenamos la clasificación de la primera jornada
 }
 
 //Jornada 2
@@ -63,10 +61,9 @@ for (let i = ((journeyPlanification.length)/3);i<(2*(journeyPlanification.length
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesSecondJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesSecondJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
-        const summariesSecondJourneyGroups = [summariesSecondJourney0,summariesSecondJourney1]
-        summariesSecondJourneyTotal.push(summariesSecondJourneyGroups[0],summariesSecondJourneyGroups[1])
+        summariesSecondJourneyTotal.push(summariesSecondJourney0,summariesSecondJourney1)
     }
-    console.table(summariesSecondJourneyTotal)
+    console.table(summariesSecondJourneyTotal.sort(orderSummaries)) //Ordenamos la clasificación de la segunda jornada
 }
 
 //Jornada 3
@@ -82,8 +79,8 @@ for (let i = (2*(journeyPlanification.length)/3);i<journeyPlanification.length; 
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesThirdJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesThirdJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
-        const summariesThirdJourneyGroups = [summariesThirdJourney0,summariesThirdJourney1]
-        summariesThirdJourneyTotal.push(summariesThirdJourneyGroups[0],summariesThirdJourneyGroups[1])
+        summariesThirdJourneyTotal.push(summariesThirdJourney0,summariesThirdJourney1)
     }
-    console.table(summariesThirdJourneyTotal)
+    console.table(summariesThirdJourneyTotal.sort(orderSummaries)) ////Ordenamos la clasificación de la tercera y última jornada
 }
+console.log("\n FIN DE LA FASE DE GRUPOS \n")
