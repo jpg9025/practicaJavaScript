@@ -23,14 +23,15 @@ for (let i = 0;i<(journeyPlanification.length)/3; i++){
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
-        const results = currentMatch.play()
-        console.log(results) //Jugamos la liga
+        const results = currentMatch.play() //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesFirstJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesFirstJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
         summariesFirstJourneyTotal.push(summariesFirstJourney0,summariesFirstJourney1)
+        console.log(`${results.localTeam} ${results.localGoals} - ${results.awayGoals} ${results.awayTeam}`)
     }
+    console.log("\n CLASIFICACIÓN ACTUAL DEL GRUPO \n")
     console.table(summariesFirstJourneyTotal.sort(orderSummaries)) //Ordenamos la clasificación de la primera jornada
 }
 
@@ -41,14 +42,15 @@ for (let i = ((journeyPlanification.length)/3);i<(2*(journeyPlanification.length
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
-        const results = currentMatch.play()
-        console.log(results) //Jugamos la liga
+        const results = currentMatch.play() //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesSecondJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesSecondJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
         summariesSecondJourneyTotal.push(summariesSecondJourney0,summariesSecondJourney1)
+        console.log(`${results.localTeam} ${results.localGoals} - ${results.awayGoals} ${results.awayTeam}`)
     }
+    console.log("\n CLASIFICACIÓN ACTUALIZADA DEL GRUPO \n")
     console.table(summariesSecondJourneyTotal.sort(orderSummaries)) //Ordenamos la clasificación de la segunda jornada
 }
 
@@ -59,16 +61,17 @@ for (let i = (2*(journeyPlanification.length)/3);i<journeyPlanification.length; 
     for (let j=0;j<journeyPlanification[i].length;j++){
         const currentMatch = new GroupsMatch (journeyPlanification[i][j][0],journeyPlanification[i][j][1])
         console.log("Jugando partido",journeyPlanification[i][j])
-        const results = currentMatch.play()
-        console.log(results) //Jugamos la liga
+        const results = currentMatch.play() //Jugamos la liga
         const teamsFiltered = currentMatch.getTeamForName(teams) //Filtramos los equipos del array de equipos para incluir los resultados
         const groupsResults = updateTeamsGroups(results,teamsFiltered) //Actualizamos el golaverage de los equipos 
         const summariesThirdJourney0 = updateTeamsArray0(teamsShufflered, groupsResults)
         const summariesThirdJourney1 = updateTeamsArray1(teamsShufflered, groupsResults)
         summariesThirdJourneyTotal.push(summariesThirdJourney0,summariesThirdJourney1)
+        console.log(`${results.localTeam} ${results.localGoals} - ${results.awayGoals} ${results.awayTeam}`)
     }
     const summariesThirdJourneyTotalSorted = summariesThirdJourneyTotal.sort(orderSummaries)
     teamsWhichPassToPlayOff.push(summariesThirdJourneyTotalSorted[0],summariesThirdJourneyTotalSorted[1])
+    console.log("\n CLASIFICACIÓN FINAL DEL GRUPO \n")
     console.table(summariesThirdJourneyTotal.sort(orderSummaries)) ////Ordenamos la clasificación de la tercera y última jornada
 }
 console.log("\n FIN DE LA FASE DE GRUPOS \n")
