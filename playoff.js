@@ -74,3 +74,12 @@ export const updateSummaries = function (array, results) {
     }
     return array
 }
+
+export const teamsFor3and4Position = function (array, results) {
+    for(let i=0;i<results.length;i++){
+        if(results[i].points<=0){
+            array.push(results[i])
+        }
+    }
+    return array
+}

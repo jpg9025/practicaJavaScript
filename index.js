@@ -1,7 +1,7 @@
 import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
-import { clearSummaries, PlayOffMatch, updateSummaries } from './playoff.js'
+import { clearSummaries, PlayOffMatch, updateSummaries, teamsFor3and4Position } from './playoff.js'
 
 //Imprimimos todos los equipos sin mezclar
 console.log("\n EQUIPOS PARTICIPANTES \n")
@@ -193,3 +193,35 @@ console.log("\n Equipos clasificados para las semifinales")
 let teamsWhichPassToRounfOf4 = []
 teamsWhichPassToRounfOf4 = updateSummaries(teamsWhichPassToRounfOf4,roundOf8Results)
 console.table(teamsWhichPassToRounfOf4)
+
+//Semifinales
+console.log("\n  JUGANDO LAS SEMIFINALES \n")
+const roundOf4Results = [] // arraay vacío para los resultados
+teamsWhichPassToRounfOf4 = clearSummaries(teamsWhichPassToRounfOf4)
+//Planificación de los octavos de final
+const match1RoundOf4 = new PlayOffMatch (teamsWhichPassToRounfOf4[0],teamsWhichPassToRounfOf4[1])
+const match2RoundOf4 = new PlayOffMatch (teamsWhichPassToRounfOf4[2],teamsWhichPassToRounfOf4[3])
+
+//Se juegan las semifinales
+console.log("Jugando partido [ '",teamsWhichPassToRounfOf4[0].name,"' , '",teamsWhichPassToRounfOf4[1].name,"' ]")
+const results13 = match1RoundOf4.play()
+roundOf4Results.push(match1RoundOf4.localTeam, match1RoundOf4.awayTeam)
+console.log(`${results13.localTeam} ${results13.localGoals} - ${results13.awayGoals} ${results13.awayTeam} \n`)
+match1RoundOf4.updatePlayOffTeams(results13)
+
+console.log("Jugando partido [ '",teamsWhichPassToRounfOf4[2].name,"' , '",teamsWhichPassToRounfOf4[3].name,"' ]")
+const results14 = match2RoundOf4.play()
+roundOf4Results.push(match2RoundOf4.localTeam, match2RoundOf4.awayTeam)
+console.log(`${results14.localTeam} ${results14.localGoals} - ${results14.awayGoals} ${results14.awayTeam} \n`)
+match2RoundOf4.updatePlayOffTeams(results14)
+
+//Resultados de las semifinales
+console.log("\n Equipos clasificados para la final")
+let teamsWhichPassToFinalRound = []
+teamsWhichPassToFinalRound = updateSummaries(teamsWhichPassToFinalRound,roundOf4Results)
+console.table(teamsWhichPassToFinalRound)
+
+console.log("\n Equipos a disputarse el tercer y cuarto puesto")
+let teamsWhichNOTPassToFinalRound = []
+teamsWhichNOTPassToFinalRound = teamsFor3and4Position(teamsWhichNOTPassToFinalRound, roundOf4Results)
+console.table(teamsWhichNOTPassToFinalRound)
