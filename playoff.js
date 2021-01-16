@@ -75,6 +75,25 @@ export const updateSummaries = function (array, results) {
     return array
 }
 
+export const creatorSchedulePlayOff = function(array) {
+    const roundResults=[]
+    for (let i=0;i<array.length;i+=4){
+        const currentMatch1 = new PlayOffMatch (array[i],array[i+3])
+        const currentMatch2 = new PlayOffMatch (array[i+1],array[i+2])
+        const results1 = currentMatch1.play()
+        currentMatch1.updatePlayOffTeams(results1)
+        roundResults.push(currentMatch1.localTeam,currentMatch1.awayTeam)
+        console.log("Jugando partido [ '",array[i].name,"', '",array[i+3].name,"' ]")
+        console.log(`${results1.localTeam} ${results1.localGoals} - ${results1.awayGoals} ${results1.awayTeam}`)
+        const results2 = currentMatch2.play()
+        currentMatch2.updatePlayOffTeams(results2)
+        roundResults.push(currentMatch2.localTeam,currentMatch2.awayTeam)
+        console.log("Jugando partido [ '",array[i+1].name,"', '",array[i+2].name,"' ]")
+        console.log(`${results2.localTeam} ${results2.localGoals} - ${results2.awayGoals} ${results2.awayTeam}`)
+    }
+    return roundResults
+}
+
 export const teamsFor3and4Position = function (array, results) {
     for(let i=0;i<results.length;i++){
         if(results[i].points<=0){

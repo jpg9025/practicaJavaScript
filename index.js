@@ -1,7 +1,7 @@
-import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries } from './teams.js'
+import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries, orderSummariesPlayOff } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
 import { Match } from './match.js'
-import { clearSummaries, PlayOffMatch, updateSummaries, teamsFor3and4Position } from './playoff.js'
+import { clearSummaries, creatorSchedulePlayOff, PlayOffMatch, updateSummaries, teamsFor3and4Position } from './playoff.js'
 
 //Imprimimos todos los equipos sin mezclar
 console.log("\n EQUIPOS PARTICIPANTES \n")
@@ -82,77 +82,23 @@ console.table(teamsWhichPassToPlayOff)
 
 //Comienza el playoff
 console.log("\n COMIENZO DE LA FASE ELIMINATORIA - PLAYOFF \n")
-const teamsPlayOff = clearSummaries(teamsWhichPassToPlayOff)
+let teamsPlayOff = clearSummaries(teamsWhichPassToPlayOff)
 
 //Octavos de final
 console.log("\n  JUGANDO LOS OCTAVOS DE FINAL \n")
-//Planificación de los octavos de final
-const match1RoundOf16 = new PlayOffMatch (teamsPlayOff[0],teamsPlayOff[3])
-const match2RoundOf16 = new PlayOffMatch (teamsPlayOff[1],teamsPlayOff[2])
-const match3RoundOf16 = new PlayOffMatch (teamsPlayOff[4],teamsPlayOff[7])
-const match4RoundOf16 = new PlayOffMatch (teamsPlayOff[5],teamsPlayOff[6])
-const match5RoundOf16 = new PlayOffMatch (teamsPlayOff[8],teamsPlayOff[11])
-const match6RoundOf16 = new PlayOffMatch (teamsPlayOff[9],teamsPlayOff[10])
-const match7RoundOf16 = new PlayOffMatch (teamsPlayOff[12],teamsPlayOff[15])
-const match8RoundOf16 = new PlayOffMatch (teamsPlayOff[13],teamsPlayOff[14])
 
 //Se juegan los octavos de final
-const roundOf16Results = [] // Array para almacenar todos los resultados
-console.log("Jugando partido [ '",teamsPlayOff[0].name,"' , '",teamsPlayOff[3].name,"' ]")
-const results1 = match1RoundOf16.play()
-roundOf16Results.push(match1RoundOf16.localTeam, match1RoundOf16.awayTeam)
-console.log(`${results1.localTeam} ${results1.localGoals} - ${results1.awayGoals} ${results1.awayTeam} \n`)
-match1RoundOf16.updatePlayOffTeams(results1)
+let teamsWhichPassToRoundOf4 = [] // Array para almacenar todos los resultados
+teamsPlayOff = creatorSchedulePlayOff(teamsPlayOff)
+teamsPlayOff.sort(orderSummariesPlayOff)
+teamsPlayOff = clearSummaries(teamsPlayOff)
+console.log("\n Equipos clasificados de los octavos de final \n")
+for (let i=0;i<=7;i++){
+    console.log(teamsPlayOff[i].name)
+    teamsWhichPassToRoundOf4.push(teamsPlayOff[i])
+}
 
-console.log("Jugando partido [ '",teamsPlayOff[1].name,"' , '",teamsPlayOff[2].name,"' ]")
-const results2 = match2RoundOf16.play()
-roundOf16Results.push(match2RoundOf16.localTeam, match2RoundOf16.awayTeam)
-console.log(`${results2.localTeam} ${results2.localGoals} - ${results2.awayGoals} ${results2.awayTeam} \n`)
-match2RoundOf16.updatePlayOffTeams(results2)
-
-console.log("Jugando partido [ '",teamsPlayOff[4].name,"' , '",teamsPlayOff[7].name,"' ]")
-const results3 = match3RoundOf16.play()
-roundOf16Results.push(match3RoundOf16.localTeam, match3RoundOf16.awayTeam)
-console.log(`${results3.localTeam} ${results3.localGoals} - ${results3.awayGoals} ${results3.awayTeam} \n`)
-match3RoundOf16.updatePlayOffTeams(results3)
-
-console.log("Jugando partido [ '",teamsPlayOff[5].name,"' , '",teamsPlayOff[6].name,"' ]")
-const results4 = match4RoundOf16.play()
-roundOf16Results.push(match4RoundOf16.localTeam, match4RoundOf16.awayTeam)
-console.log(`${results4.localTeam} ${results4.localGoals} - ${results4.awayGoals} ${results4.awayTeam} \n`)
-match4RoundOf16.updatePlayOffTeams(results4)
-
-console.log("Jugando partido [ '",teamsPlayOff[8].name,"' , '",teamsPlayOff[11].name,"' ]")
-const results5 = match5RoundOf16.play()
-roundOf16Results.push(match5RoundOf16.localTeam, match5RoundOf16.awayTeam)
-console.log(`${results5.localTeam} ${results5.localGoals} - ${results5.awayGoals} ${results5.awayTeam} \n`)
-match5RoundOf16.updatePlayOffTeams(results5)
-
-console.log("Jugando partido [ '",teamsPlayOff[9].name,"' , '",teamsPlayOff[10].name,"' ]")
-const results6 = match6RoundOf16.play()
-roundOf16Results.push(match6RoundOf16.localTeam, match6RoundOf16.awayTeam)
-console.log(`${results6.localTeam} ${results6.localGoals} - ${results6.awayGoals} ${results6.awayTeam} \n`)
-match6RoundOf16.updatePlayOffTeams(results6)
-
-console.log("Jugando partido [ '",teamsPlayOff[12].name,"' , '",teamsPlayOff[15].name,"' ]")
-const results7 = match7RoundOf16.play()
-roundOf16Results.push(match7RoundOf16.localTeam, match7RoundOf16.awayTeam)
-console.log(`${results7.localTeam} ${results7.localGoals} - ${results7.awayGoals} ${results7.awayTeam} \n`)
-match7RoundOf16.updatePlayOffTeams(results7)
-
-console.log("Jugando partido [ '",teamsPlayOff[13].name,"' , '",teamsPlayOff[14].name,"' ]")
-const results8 = match8RoundOf16.play()
-roundOf16Results.push(match8RoundOf16.localTeam, match8RoundOf16.awayTeam)
-console.log(`${results8.localTeam} ${results8.localGoals} - ${results8.awayGoals} ${results8.awayTeam} \n`)
-match8RoundOf16.updatePlayOffTeams(results8)
-
-//Resultados de los octavos de final
-console.log("\n Equipos clasificados para cuartos de final")
-let teamsWhichPassToRounfOf8 = []
-teamsWhichPassToRounfOf8 = updateSummaries(teamsWhichPassToRounfOf8,roundOf16Results)
-console.table(teamsWhichPassToRounfOf8)
-
-
+/*
 //Cuartos de final
 console.log("\n  JUGANDO LOS CUARTOS DE FINAL \n")
 const roundOf8Results = [] // arraay vacío para los resultados
@@ -192,7 +138,7 @@ match4RoundOf8.updatePlayOffTeams(results12)
 console.log("\n Equipos clasificados para las semifinales")
 let teamsWhichPassToRounfOf4 = []
 teamsWhichPassToRounfOf4 = updateSummaries(teamsWhichPassToRounfOf4,roundOf8Results)
-console.table(teamsWhichPassToRounfOf4)
+console.log("\n",teamsWhichPassToRounfOf4[0].name,"\n",teamsWhichPassToRounfOf4[1].name,"\n",teamsWhichPassToRounfOf4[2].name,"\n",teamsWhichPassToRounfOf4[3].name,"\n")
 
 //Semifinales
 console.log("\n  JUGANDO LAS SEMIFINALES \n")
@@ -219,9 +165,12 @@ match2RoundOf4.updatePlayOffTeams(results14)
 console.log("\n Equipos clasificados para la final")
 let teamsWhichPassToFinalRound = []
 teamsWhichPassToFinalRound = updateSummaries(teamsWhichPassToFinalRound,roundOf4Results)
-console.table(teamsWhichPassToFinalRound)
+console.log("\n",teamsWhichPassToFinalRound[0].name,"\n",teamsWhichPassToFinalRound[1].name,"\n")
 
 console.log("\n Equipos a disputarse el tercer y cuarto puesto")
 let teamsWhichNOTPassToFinalRound = []
 teamsWhichNOTPassToFinalRound = teamsFor3and4Position(teamsWhichNOTPassToFinalRound, roundOf4Results)
-console.table(teamsWhichNOTPassToFinalRound)
+console.log("\n",teamsWhichNOTPassToFinalRound[0].name,"\n",teamsWhichNOTPassToFinalRound[1].name,"\n")
+
+//Tercer y cuarto puesto*/
+

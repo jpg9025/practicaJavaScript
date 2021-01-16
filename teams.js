@@ -50,6 +50,14 @@ export const orderSummaries = function(team1 , team2){
   }
 }
 
+export const orderSummariesPlayOff = function(team1,team2){
+  if (team1.points > team2.points) { // 1. Por puntos
+    return -1
+  } else if (team1.points < team2.points) {
+    return 1
+  }
+}
+
 export const teams = [
   {
     "name": "Algeria",
