@@ -130,3 +130,35 @@ for (let i=2;i<=3;i++){
     teamsWhichNOTPassToFinal.push(teamsWhichPassToSemifinal[i])
 }
 
+//Tercer y Cuarto puesto
+const thirdAndFourthPlace = new PlayOffMatch(teamsWhichPassToFinal[0],teamsWhichNOTPassToFinal[1])
+const resultThirdAndFourth = thirdAndFourthPlace.play()
+console.log("\nJugando tercer y cuarto puesto\n")
+console.log("[ '",teamsWhichNOTPassToFinal[0].name,"', '",teamsWhichNOTPassToFinal[1].name,"' ]")
+console.log(`${resultThirdAndFourth.localTeam} ${resultThirdAndFourth.localGoals} - ${resultThirdAndFourth.awayGoals} ${resultThirdAndFourth.awayTeam}`)
+
+//Final
+const FinalMatch = new PlayOffMatch(teamsWhichPassToFinal[0],teamsWhichPassToFinal[1])
+const finalResult = FinalMatch.play()
+console.log("\n JUGANDO LA FINAL DEL TORNEO\n")
+console.log("[ '",teamsWhichPassToFinal[0].name,"', '",teamsWhichPassToFinal[1].name,"' ]")
+console.log(`${finalResult.localTeam} ${finalResult.localGoals} - ${finalResult.awayGoals} ${finalResult.awayTeam}`)
+
+//Resultados finales
+console.log("\n FIN DEL TORNEO \n")
+if (finalResult.localGoals>finalResult.awayGoals) {
+    console.log(finalResult.localTeam," - Campeón del mundial\n")
+    console.log(finalResult.awayTeam," - Subcampeón del mundial\n")
+} else if (finalResult.localGoals<finalResult.awayGoals) {
+    console.log(finalResult.awayTeam," - Campeón del mundial\n")
+    console.log(finalResult.localTeam," - Subcampeón del mundial\n")
+}
+
+//Resultados Tercer y Cuarto puesto
+if (resultThirdAndFourth.localGoals>resultThirdAndFourth.awayGoals) {
+    console.log(resultThirdAndFourth.localTeam," - Tercer clasificado del mundial\n")
+    console.log(resultThirdAndFourth.awayTeam," - Cuarto clasificado del mundial\n")
+} else if (resultThirdAndFourth.localGoals<resultThirdAndFourth.awayGoals) {
+    console.log(resultThirdAndFourth.awayTeam," - Tercer clasificado del mundial\n")
+    console.log(resultThirdAndFourth.localTeam," - Cuarto clasificado del mundial\n")
+}
