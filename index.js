@@ -1,6 +1,5 @@
 import { updateTeamsArray0, updateTeamsArray1, teams, orderSummaries, orderSummariesPlayOff } from './teams.js'
 import { GroupsMatch, initSchedule , teamsShuffler , groupGenerator, updateTeamsGroups } from './groups.js'
-import { Match } from './match.js'
 import { clearSummaries, creatorSchedulePlayOff, PlayOffMatch, updateSummaries, teamsFor3and4Position } from './playoff.js'
 
 //Imprimimos todos los equipos sin mezclar
@@ -131,7 +130,7 @@ for (let i=2;i<=3;i++){
 }
 
 //Tercer y Cuarto puesto
-const thirdAndFourthPlace = new PlayOffMatch(teamsWhichPassToFinal[0],teamsWhichNOTPassToFinal[1])
+const thirdAndFourthPlace = new PlayOffMatch(teamsWhichNOTPassToFinal[0],teamsWhichNOTPassToFinal[1])
 const resultThirdAndFourth = thirdAndFourthPlace.play()
 console.log("\nJugando tercer y cuarto puesto\n")
 console.log("[ '",teamsWhichNOTPassToFinal[0].name,"', '",teamsWhichNOTPassToFinal[1].name,"' ]")
